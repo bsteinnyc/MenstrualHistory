@@ -21,15 +21,14 @@ function readResults() {
 function summarySheet() {
     document.getElementById("summarySheet").parentNode.removeChild(document.getElementById("summarySheet"));
     document.getElementById("title").innerHTML = document.getElementById("title").innerHTML + " Summary";
-    for (var i = 0, len = localStorage.length; i < len; ++i) {
+    for (var i = 0;i < localStorage.length; ++i) {
         if (document.getElementById(localStorage.key(i)).type == "checkbox") {
-            document.getElementById(localStorage.key(i)).checked = (localStorage.getItem(localStorage.key(i)) == "true");
-            document.getElementById(localStorage.key(i)).disabled = true;
+            document.getElementById(localStorage.key(i)).checked = (localStorage.getItem(localStorage.key(i)) == true);
         }
         if (document.getElementById(localStorage.key(i)).type == "text") {
             document.getElementById(localStorage.key(i)).value = localStorage.getItem(localStorage.key(i));
-            document.getElementById(localStorage.key(i)).disabled = true;
         }
+            document.getElementById(localStorage.key(i)).disabled = true;
     }
 
 }
